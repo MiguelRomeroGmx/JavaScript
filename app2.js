@@ -27,3 +27,36 @@ if (esMayor05()) {
 else{
     console.log("Es menor que 0.5");    
     }
+
+
+
+function crearPersona(nombre, apellido) {
+    return{
+        nombre: nombre,
+        apellido: apellido
+    }
+}
+
+var persona = crearPersona("María", "Pérez");
+
+// 
+
+function creaFuncion() {
+    return function (nombre) {
+        console.log("Me creo " + nombre)
+        return function(){
+            console.log("Segunda funcion")
+        }
+    }
+}
+
+var nuevaFuncion = creaFuncion();
+
+
+var segundaFuncion =  nuevaFuncion(persona.nombre);
+
+segundaFuncion();
+
+
+
+
