@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grafico</title>
+<script type="text/javascript" src="jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="dist/Chart.bundle.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var datos ={
+            type: "pie",
+            data: {
+                datasets: [{
+                    data: [
+                        5,
+                        13,
+                        15,
+                        49,
+                        7,
+                    ],
+                    backgroundColor:[
+                        "#FF530D",
+                        "#E80C7A",
+                        "#2B28FF",
+                        "#68FFBC",
+                        "#E8AE0C",
+                    ],
+                }],
+                labels: [
+                    "Datos 1",
+                    "Datos 2",
+                    "Datos 3",
+                    "Datos 4",
+                    "Datos 5",
+                ]
+            },
+            options:{
+                responsive: true,
+            }
+        };
+
+       var canvas = document.getElementById('chart').getContext('2d'); 
+        window.pie = new Chart(canvas, datos);
+       
+    });
+</script>
+</head>
+<body>
+    <h1>Gráfico</h1>
+<div id="canvas-container" style="width:50%;">
+    <canvas id="chart" width="500" height="350"></canvas>
+</div>
+
+</body>
+</html>
